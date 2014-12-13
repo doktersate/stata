@@ -25,3 +25,28 @@ reg accinf Ur *** run regression of accinf on Ur
 predict ehat, resid *** retrieve residuals from regression and names it ehat
 
 reg accinf Ur if tin(1961q1, 2003q4) *** run regression but restrict sample period to 1961q1 to 2003q4
+
+*****
+tsline g u
+
+label var g "gdp growth"
+
+label var u "% unemployed"
+
+tsline u g, Lpattern (solid dash)
+
+tsline u g if tin (1990q2, 2005q3), Lpattern (solid dash)
+
+list u l.u in 1/10
+
+list u in l1.u l2.u l3.u in 1/10
+
+gen du = u - l.u
+
+list du in 1/10
+
+reg du g if tin(1986q1, 2009q3)
+
+list g lu.g in 1/10
+
+***
