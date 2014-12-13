@@ -49,4 +49,6 @@ reg du g if tin(1986q1, 2009q3)
 
 list g lu.g in 1/10
 
+reg du g l.g l2.g l3.g l4.g 
+
 ***
